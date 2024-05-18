@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_main_job_histories",
+  "info": {
+    "displayName": "Job History",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "background": {
+      "type": "enumeration",
+      "enum": [
+        "white",
+        "ghostWhite",
+        "lightGrey",
+        "vividRed",
+        "periwinkleBlue",
+        "salmonPink",
+        "mauveTaupe"
+      ],
+      "required": true
+    },
+    "card_background": {
+      "type": "enumeration",
+      "enum": [
+        "white",
+        "ghostWhite",
+        "lightGrey",
+        "vividRed",
+        "periwinkleBlue",
+        "salmonPink",
+        "mauveTaupe"
+      ],
+      "required": true
+    },
+    "card_hover_background": {
+      "type": "enumeration",
+      "enum": [
+        "white",
+        "ghostWhite",
+        "lightGrey",
+        "vividRed",
+        "periwinkleBlue",
+        "salmonPink",
+        "mauveTaupe"
+      ],
+      "required": true
+    }
+  }
+}

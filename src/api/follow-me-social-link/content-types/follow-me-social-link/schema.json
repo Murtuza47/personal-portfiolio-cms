@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "follow_me_social_links",
+  "info": {
+    "singularName": "follow-me-social-link",
+    "pluralName": "follow-me-social-links",
+    "displayName": "follow-me-social-link"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "social_link": {
+      "type": "string"
+    },
+    "social_icon": {
+      "type": "enumeration",
+      "enum": [
+        "TwitterIcon",
+        "FacebookIcon",
+        "InstagramIcon",
+        "LinkedinIcon",
+        "YoutubeIcon"
+      ]
+    }
+  }
+}

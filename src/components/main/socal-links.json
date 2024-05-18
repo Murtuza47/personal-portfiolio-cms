@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_main_socal_links",
+  "info": {
+    "displayName": "Socal Links"
+  },
+  "options": {},
+  "attributes": {
+    "social_icon": {
+      "type": "enumeration",
+      "enum": [
+        "LinkedinIcon",
+        "TwitterIcon",
+        "FacebookIcon",
+        "InstagramIcon",
+        "YoutubeIcon"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "service_components",
+  "info": {
+    "singularName": "service-component",
+    "pluralName": "service-components",
+    "displayName": "service-component"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

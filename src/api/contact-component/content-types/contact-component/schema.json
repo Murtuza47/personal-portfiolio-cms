@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_components",
+  "info": {
+    "singularName": "contact-component",
+    "pluralName": "contact-components",
+    "displayName": "contact-component",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

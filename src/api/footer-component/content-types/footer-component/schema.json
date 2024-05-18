@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "footer_components",
+  "info": {
+    "singularName": "footer-component",
+    "pluralName": "footer-components",
+    "displayName": "footer-component",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "copyright_text": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "social_links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "main.socal-links"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_main_about_myselves",
+  "info": {
+    "displayName": "About Myself",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "background": {
+      "type": "enumeration",
+      "enum": [
+        "white",
+        "ghostWhite",
+        "lightGrey",
+        "vividRed",
+        "periwinkleBlue",
+        "salmonPink",
+        "mauveTaupe"
+      ]
+    },
+    "show_about_myself": {
+      "type": "boolean",
+      "required": true
+    }
+  }
+}

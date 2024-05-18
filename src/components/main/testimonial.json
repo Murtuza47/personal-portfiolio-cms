@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_main_testimonials",
+  "info": {
+    "displayName": "Testimonial",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "background": {
+      "type": "enumeration",
+      "enum": [
+        "white",
+        "ghostWhite",
+        "lightGrey",
+        "vividRed",
+        "periwinkleBlue",
+        "salmonPink",
+        "mauveTaupe"
+      ]
+    }
+  }
+}

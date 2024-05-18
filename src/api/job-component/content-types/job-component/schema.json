@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "job_components",
+  "info": {
+    "singularName": "job-component",
+    "pluralName": "job-components",
+    "displayName": "job-component"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
