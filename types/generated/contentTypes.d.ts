@@ -875,46 +875,6 @@ export interface ApiContactComponentContactComponent extends Schema.SingleType {
   };
 }
 
-export interface ApiFollowMeSocialLinkFollowMeSocialLink
-  extends Schema.CollectionType {
-  collectionName: 'follow_me_social_links';
-  info: {
-    singularName: 'follow-me-social-link';
-    pluralName: 'follow-me-social-links';
-    displayName: 'follow-me-social-link';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    social_link: Attribute.String;
-    social_icon: Attribute.Enumeration<
-      [
-        'TwitterIcon',
-        'FacebookIcon',
-        'InstagramIcon',
-        'LinkedinIcon',
-        'YoutubeIcon'
-      ]
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::follow-me-social-link.follow-me-social-link',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::follow-me-social-link.follow-me-social-link',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiFooterComponentFooterComponent extends Schema.SingleType {
   collectionName: 'footer_components';
   info: {
@@ -948,28 +908,64 @@ export interface ApiFooterComponentFooterComponent extends Schema.SingleType {
   };
 }
 
-export interface ApiHomeHome extends Schema.SingleType {
-  collectionName: 'homes';
+export interface ApiHomePageHomePage extends Schema.SingleType {
+  collectionName: 'home_pages';
   info: {
-    singularName: 'home';
-    pluralName: 'homes';
-    displayName: 'Home Page';
+    singularName: 'home-page';
+    pluralName: 'home-pages';
+    displayName: 'home-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    about_component: Attribute.Component<'main.about-myself'> &
+      Attribute.Required;
+    job_component: Attribute.Component<'main.job-history'> & Attribute.Required;
+    service_component: Attribute.Component<'main.services'> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiJobJob extends Schema.CollectionType {
+  collectionName: 'jobs';
+  info: {
+    singularName: 'job';
+    pluralName: 'jobs';
+    displayName: 'job';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    about_section: Attribute.Component<'main.about-myself'>;
-    job_hostory_section: Attribute.Component<'main.job-history'>;
-    service_section: Attribute.Component<'main.services'>;
-    testimonial_section: Attribute.Component<'main.testimonial'>;
+    job_title: Attribute.String & Attribute.Required;
+    employer_name: Attribute.String & Attribute.Required;
+    job_start_date: Attribute.String & Attribute.Required;
+    job_end_date: Attribute.String & Attribute.Required;
+    employer_location: Attribute.String & Attribute.Required;
+    job_description: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+    createdBy: Attribute.Relation<'api::job.job', 'oneToOne', 'admin::user'> &
       Attribute.Private;
-    updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+    updatedBy: Attribute.Relation<'api::job.job', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -998,6 +994,51 @@ export interface ApiJobComponentJobComponent extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::job-component.job-component',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServiceService extends Schema.CollectionType {
+  collectionName: 'services';
+  info: {
+    singularName: 'service';
+    pluralName: 'services';
+    displayName: 'service';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    icon: Attribute.Enumeration<['webDeveloperIcon']> & Attribute.Required;
+    background: Attribute.Enumeration<
+      [
+        'white',
+        'ghostWhite',
+        'lightGrey',
+        'vividRed',
+        'periwinkleBlue',
+        'salmonPink',
+        'mauveTaupe'
+      ]
+    > &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service.service',
       'oneToOne',
       'admin::user'
     > &
@@ -1057,10 +1098,11 @@ declare module '@strapi/types' {
       'api::about-component.about-component': ApiAboutComponentAboutComponent;
       'api::blog.blog': ApiBlogBlog;
       'api::contact-component.contact-component': ApiContactComponentContactComponent;
-      'api::follow-me-social-link.follow-me-social-link': ApiFollowMeSocialLinkFollowMeSocialLink;
       'api::footer-component.footer-component': ApiFooterComponentFooterComponent;
-      'api::home.home': ApiHomeHome;
+      'api::home-page.home-page': ApiHomePageHomePage;
+      'api::job.job': ApiJobJob;
       'api::job-component.job-component': ApiJobComponentJobComponent;
+      'api::service.service': ApiServiceService;
       'api::service-component.service-component': ApiServiceComponentServiceComponent;
     }
   }

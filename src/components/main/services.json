@@ -17,6 +17,10 @@
         "salmonPink",
         "mauveTaupe"
       ]
+    },
+    "show_service": {
+      "type": "boolean",
+      "required": true
     }
   }
 }

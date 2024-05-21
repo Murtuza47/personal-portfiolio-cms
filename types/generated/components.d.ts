@@ -65,6 +65,7 @@ export interface MainJobHistory extends Schema.Component {
       ]
     > &
       Attribute.Required;
+    show_job_history: Attribute.Boolean & Attribute.Required;
   };
 }
 
@@ -86,6 +87,7 @@ export interface MainServices extends Schema.Component {
         'mauveTaupe'
       ]
     >;
+    show_service: Attribute.Boolean & Attribute.Required;
   };
 }
 
@@ -107,27 +109,6 @@ export interface MainSocalLinks extends Schema.Component {
   };
 }
 
-export interface MainTestimonial extends Schema.Component {
-  collectionName: 'components_main_testimonials';
-  info: {
-    displayName: 'Testimonial';
-    description: '';
-  };
-  attributes: {
-    background: Attribute.Enumeration<
-      [
-        'white',
-        'ghostWhite',
-        'lightGrey',
-        'vividRed',
-        'periwinkleBlue',
-        'salmonPink',
-        'mauveTaupe'
-      ]
-    >;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -135,7 +116,6 @@ declare module '@strapi/types' {
       'main.job-history': MainJobHistory;
       'main.services': MainServices;
       'main.socal-links': MainSocalLinks;
-      'main.testimonial': MainTestimonial;
     }
   }
 }

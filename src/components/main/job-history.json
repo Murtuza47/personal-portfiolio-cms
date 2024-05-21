@@ -44,6 +44,10 @@
         "mauveTaupe"
       ],
       "required": true
+    },
+    "show_job_history": {
+      "type": "boolean",
+      "required": true
     }
   }
 }

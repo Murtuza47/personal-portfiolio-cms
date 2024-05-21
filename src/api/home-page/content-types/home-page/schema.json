@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "home-page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "about_component": {
+      "type": "component",
+      "repeatable": false,
+      "component": "main.about-myself",
+      "required": true
+    },
+    "job_component": {
+      "type": "component",
+      "repeatable": false,
+      "component": "main.job-history",
+      "required": true
+    },
+    "service_component": {
+      "type": "component",
+      "repeatable": false,
+      "component": "main.services",
+      "required": true
+    }
+  }
+}
