@@ -95,6 +95,7 @@ export interface MainSocalLinks extends Schema.Component {
   collectionName: 'components_main_socal_links';
   info: {
     displayName: 'Socal Links';
+    description: '';
   };
   attributes: {
     social_icon: Attribute.Enumeration<
@@ -105,7 +106,9 @@ export interface MainSocalLinks extends Schema.Component {
         'InstagramIcon',
         'YoutubeIcon'
       ]
-    >;
+    > &
+      Attribute.Required;
+    hover_color: Attribute.String & Attribute.Required;
   };
 }
 

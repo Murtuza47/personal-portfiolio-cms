@@ -1,7 +1,8 @@
 {
   "collectionName": "components_main_socal_links",
   "info": {
-    "displayName": "Socal Links"
+    "displayName": "Socal Links",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,7 +14,12 @@
         "FacebookIcon",
         "InstagramIcon",
         "YoutubeIcon"
-      ]
+      ],
+      "required": true
+    },
+    "hover_color": {
+      "type": "string",
+      "required": true
     }
   }
 }
